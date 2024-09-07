@@ -37,11 +37,11 @@ class HooverService {
 		// We call this in case the starting point of the hoover is on a patch.
 		int patchesCleaned = cleanPatchIfNecessary(x, y, patches, 0);
 		
-		for (char direction : directions) {
+		for (final char direction : directions) {
 			switch (direction) {
 				case 'N':	// UP
 					if (y + 1 >= yAxisUpperLimit) {
-						checkIfLimitIsReached();
+						indicateThatLimitIsReached();
 					} else {
 						y++;
 						setCurrentPosition(x, y, currentPosition);
@@ -50,7 +50,7 @@ class HooverService {
 					break;
 				case 'S':	// DOWN
 					if (y - 1 < LOWER_LIMIT) {
-						checkIfLimitIsReached();
+						indicateThatLimitIsReached();
 					} else {
 						y--;
 						setCurrentPosition(x, y, currentPosition);
@@ -59,7 +59,7 @@ class HooverService {
 					break;
 				case 'E':	// RIGHT
 					if (x + 1 >= xAxisUpperLimit) {
-						checkIfLimitIsReached();
+						indicateThatLimitIsReached();
 					} else {
 						x++;
 						setCurrentPosition(x, y, currentPosition);
@@ -68,7 +68,7 @@ class HooverService {
 					break;
 				case 'W':	// LEFT
 					if (x - 1 < LOWER_LIMIT) {
-						checkIfLimitIsReached();
+						indicateThatLimitIsReached();
 					} else {
 						x--;
 						setCurrentPosition(x, y, currentPosition);
@@ -110,7 +110,7 @@ class HooverService {
 		return currentpatches;
 	}
 
-	private void checkIfLimitIsReached() {
+	private void indicateThatLimitIsReached() {
 		System.out.println("I reached the boundaries. Will stay where I am.");
 	}
 	

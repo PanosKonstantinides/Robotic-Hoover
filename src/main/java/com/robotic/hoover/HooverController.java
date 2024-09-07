@@ -36,7 +36,7 @@ public class HooverController {
 	 * 
 	 * @param service	the service class that handles all business logic.
 	 */
-	public HooverController(HooverService service) {
+	public HooverController(final HooverService service) {
 		this.service = service;
 	}
 

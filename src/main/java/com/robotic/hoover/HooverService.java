@@ -93,7 +93,7 @@ class HooverService {
 		return patchesCleaned;
 	}
 
-	private void setCurrentPosition(int x, int y, int[] currentPosition) {
+	private void setCurrentPosition(final int x, final int y, final int[] currentPosition) {
 		currentPosition[0] = x;
 		currentPosition[1] = y;
 	}
